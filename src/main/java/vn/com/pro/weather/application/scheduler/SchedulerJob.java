@@ -12,9 +12,9 @@ import vn.com.pro.weather.application.port.WeatherServicePort;
 public class SchedulerJob {
   final WeatherServicePort weatherServicePort;
 
-  @Scheduled(fixedRate = 5000)
+  @Scheduled(cron = "${cron.job.pull.data.in.week}")
   public void cronJobPullWeatherWeekData() {
-    log.info("----------------");
+    log.info("scheduled job pull data weather on next week start");
     try {
       weatherServicePort.fetchWeatherDataOnNextWeek();
     } catch (Exception exception) {
