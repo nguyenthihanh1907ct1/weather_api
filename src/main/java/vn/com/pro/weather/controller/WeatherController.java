@@ -12,7 +12,7 @@ import vn.com.pro.weather.application.port.WeatherServicePort;
 @AllArgsConstructor
 @Slf4j
 @RequestMapping(value = "/api/weather")
-public class IndexController {
+public class WeatherController {
   final WeatherServicePort weatherServicePort;
 
   @GetMapping(value = "/today")
